@@ -143,9 +143,9 @@ module.exports = function (grunt) {
           style: 'compact'
         },
         compile: {
-          files: {
-            'app/styles/**.css': 'assets/sass/**.sass'
-          }
+          files: [
+            {expand: true, cwd: 'assets/sass', src: ['*.sass'], dest: 'app/styles', ext: '.css'}
+          ]
         }
       }
     },
