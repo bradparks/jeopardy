@@ -36,8 +36,8 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.css', 'assets/sass/**.sass'],
+        tasks: ['sass', 'newer:copy:styles', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -136,9 +136,23 @@ module.exports = function (grunt) {
       }
     },
 
-    
+    sass: {
+      dist: {
+        options: {
+          sourceMap: true,
+          style: 'compact'
+        },
+        compile: {
+          files: {
+            'app/styles/**.css': 'assets/sass/**.sass'
+          }
+        }
+      }
+    },
 
-    
+
+
+
 
     // Renames files for browser caching purposes
     rev: {
@@ -318,7 +332,6 @@ module.exports = function (grunt) {
     }
   });
 
-
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -358,7 +371,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usemin'
+    'usemin',
+    'sass'
   ]);
 
   grunt.registerTask('default', [
