@@ -1046,3 +1046,10 @@ striping:
 }
 /* end from menu-responsive.css ******************/
 
+.player-box {
+	text-align: center;
+	background: #138BD9;
+	border: 1px solid #2e2e2e;
+	margin: 2px;
+	height: 100px;
+}
