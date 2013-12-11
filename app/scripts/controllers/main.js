@@ -8,3 +8,8 @@ angular.module('webappApp')
       'Karma'
     ];
   });
+
+  angular.module('webappApp')
+  .controller('QuestionSelectCtrl', function QuestionSelectCtrl($scope, Question) {
+  	$scope.datas = Question.query();
+  });

@@ -3,7 +3,6 @@
 angular.module('webappApp', [
   'ngCookies',
   'ngResource',
-  'ngSanitize',
   'ngRoute'
 ])
   .config(function ($routeProvider) {
