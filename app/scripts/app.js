@@ -1,25 +1,25 @@
 'use strict';
 
 angular.module('webappApp', [
-  'ngCookies',
-  'ngResource',
-  'ngRoute',
-  'ngMockE2E'
+	'ngCookies',
+	'ngResource',
+	'ngRoute',
+	'ngMockE2E'
 ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  })
+.config(function ($routeProvider) {
+	$routeProvider
+		.when('/', {
+			templateUrl: 'views/main.html',
+			controller: 'MainCtrl'
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+	});
 
-  //Nuke this when the backend is finished.
-  //You can't get mad at me for this! This is what we agreed on!!!
-  .run(function ($httpBackend) {
+	//Nuke this when the backend is finished.
+	//You can't get mad at me for this! This is what we agreed on!!!
+	.run(function ($httpBackend) {
 	var questions = [{
 					"category": "LAKES & RIVERS",
 					"questions": [{
