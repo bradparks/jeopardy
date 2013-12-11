@@ -15,7 +15,7 @@ angular.module('webappApp', [
 		.otherwise({
 			redirectTo: '/'
 		});
-	});
+	})
 
 	//Nuke this when the backend is finished.
 	//You can't get mad at me for this! This is what we agreed on!!!
